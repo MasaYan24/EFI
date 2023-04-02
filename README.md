@@ -27,3 +27,18 @@ Device      Start        End    Sectors  Size Type
 sudo parted /dev/sdh mkpart primary ext4 512M 100%
 sudo mkfs.ext4 /dev/sdh2
 ```
+確認
+```sh
+# sudo fdisk -l
+Disk /dev/sdh: 1.86 TiB, 2048408248320 bytes, 4000797360 sectors
+Disk model: P80-2TB
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: A578BFDD-780D-47D4-B922-96CEB395C4B8
+
+Device      Start        End    Sectors  Size Type
+/dev/sdh1    2048     999423     997376  487M EFI System
+/dev/sdh2  999424 4000796671 3999797248  1.9T Linux filesystem
+```
